@@ -1,0 +1,122 @@
+﻿@model RA_App.Models.Form
+
+@{
+    ViewBag.Title = "Details of Report";
+}
+
+<h2>Report Details</h2>
+
+<div>
+    <h4>Form</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudSurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YOS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YOS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NatureOf_II)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NatureOf_II)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dateof_II)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dateof_II)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateReported_II)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateReported_II)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Details_II)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details_II)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActionsTaken)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActionsTaken)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Recommendations)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recommendations)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResidenceAdvisor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResidenceAdvisor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
