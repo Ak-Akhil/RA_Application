@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using RA_App.Models;
 
-namespace RA_Application.Controllers
+namespace RA_App.Controllers
 {
     public class FormsController : Controller
     {
@@ -42,11 +42,11 @@ namespace RA_Application.Controllers
         }
 
         // POST: Forms/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,TOR,StudName,StudSurname,StudNo,YOS,ContactNo,NatureOf_II,Dateof_II,DateReported_II,Details_II,ActionsTaken,Recommendations,ResidenceAdvisor")] Form form)
+        public ActionResult Create([Bind(Include = "ID,TOR,StudName,StudSurname,StudNo,YOS,ContactNo,NatureOf_II,Dateof_II,DateReported_II,Details_II,ActionsTaken,Recommendations,UserName,Emp_Name")] Form form)
         {
             if (ModelState.IsValid)
             {
@@ -74,11 +74,11 @@ namespace RA_Application.Controllers
         }
 
         // POST: Forms/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,TOR,StudName,StudSurname,StudNo,YOS,ContactNo,NatureOf_II,Dateof_II,DateReported_II,Details_II,ActionsTaken,Recommendations,ResidenceAdvisor")] Form form)
+        public ActionResult Edit([Bind(Include = "ID,TOR,StudName,StudSurname,StudNo,YOS,ContactNo,NatureOf_II,Dateof_II,DateReported_II,Details_II,ActionsTaken,Recommendations,UserName,Emp_Name")] Form form)
         {
             if (ModelState.IsValid)
             {

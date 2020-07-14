@@ -9,7 +9,8 @@ namespace RA_App.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "RA_App.Models.ApplicationDbContext";
         }
 

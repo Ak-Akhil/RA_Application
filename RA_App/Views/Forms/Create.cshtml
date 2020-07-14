@@ -1,10 +1,10 @@
 ﻿@model RA_App.Models.Form
 
 @{
-    ViewBag.Title = "Create a Report";
+    ViewBag.Title = "Create";
 }
 
-<h2>Create Report</h2>
+<h2>Create</h2>
 
 
 @using (Html.BeginForm()) 
@@ -112,16 +112,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ResidenceAdvisor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ResidenceAdvisor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ResidenceAdvisor, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>

@@ -1,10 +1,10 @@
 ﻿@model RA_App.Models.Form
 
 @{
-    ViewBag.Title = "Delete Report";
+    ViewBag.Title = "Delete";
 }
 
-<h2>Delete Report</h2>
+<h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
@@ -108,11 +108,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ResidenceAdvisor)
+            @Html.DisplayNameFor(model => model.UserName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ResidenceAdvisor)
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Emp_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Name)
         </dd>
 
     </dl>

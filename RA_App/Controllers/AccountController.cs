@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -149,26 +150,44 @@ namespace RA_App.Controllers
         }
 
         //
+
+
+
+        [AllowAnonymous]
+        public ActionResult Index()
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var users = db.Users.Include(c => c.Roles);
+
+            return View(users.ToList());
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
         {
+            RegisterViewModel model = new RegisterViewModel();
+            List<SelectListItem> list = new List<SelectListItem>();
+            foreach (var role in RoleManager.Roles)
+                list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
+            ViewBag.Roles = list;
+            return View(model);
 
-            ApplicationDbContext db = new ApplicationDbContext();
-            var roles =  db.Roles.Select(r => r.Name);
-            var viewModel = new RegisterViewModel
-            {
-                RoleList = new SelectList(roles)
-            };
-            return View(viewModel);
-
-
-
-            //List<SelectListItem> list = new List<SelectListItem>();
-            //foreach (var role in RoleManager.Roles)
-            //    list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
-            //ViewBag.Roles = list;
-            //return View();
+            
         }
 
         //
@@ -185,7 +204,7 @@ namespace RA_App.Controllers
                 if (result.Succeeded)
                 {
                     
-            result = await UserManager.AddToRoleAsync(user.Id, model.RoleName);
+        result = await UserManager.AddToRoleAsync(user.Id, model.Role_Name);
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
@@ -198,6 +217,11 @@ namespace RA_App.Controllers
                 }
                 AddErrors(result);
             }
+
+            List<SelectListItem> list = new List<SelectListItem>();
+            foreach (var role in RoleManager.Roles)
+                list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
+            ViewBag.Roles = list;
 
             // If we got this far, something failed, redisplay form
             return View(model);

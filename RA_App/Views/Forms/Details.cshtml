@@ -1,10 +1,10 @@
 ﻿@model RA_App.Models.Form
 
 @{
-    ViewBag.Title = "Details of Report";
+    ViewBag.Title = "Details";
 }
 
-<h2>Report Details</h2>
+<h2>Details</h2>
 
 <div>
     <h4>Form</h4>
@@ -107,11 +107,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ResidenceAdvisor)
+            @Html.DisplayNameFor(model => model.UserName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ResidenceAdvisor)
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Emp_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Name)
         </dd>
 
     </dl>

@@ -1,0 +1,111 @@
+﻿@model IEnumerable<RA_App.Models.Form>
+
+@{
+    ViewBag.Title = "List of Reports";
+}
+
+<h2>List of Reports</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudSurname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YOS)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NatureOf_II)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Dateof_II)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateReported_II)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Details_II)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActionsTaken)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recommendations)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResidenceAdvisor)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TOR)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StudName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StudSurname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StudNo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.YOS)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.ContactNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NatureOf_II)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.Dateof_II)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateReported_II)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.Details_II)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActionsTaken)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Recommendations)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResidenceAdvisor)
+        </td>*@
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+    </td>
+</tr>
+}
+
+</table>

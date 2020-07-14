@@ -111,3 +111,4 @@ C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.csproj.CoreCompileInp
 C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.csproj.CopyComplete
 C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.dll
 C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.pdb
+C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.csprojAssemblyReference.cache

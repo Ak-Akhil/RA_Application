@@ -94,9 +94,16 @@ namespace RA_App.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Display(Name = "Role")]
-        public string RoleName { get; set; }
-        public IEnumerable<SelectListItem> RoleList { get; set; }
+
+
+
+
+
+
+
+        public string Role_Name { get; set; }
+        public virtual RoleViewModel RoleViewModel { get; set; }
+
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]

@@ -70,10 +70,14 @@ namespace RA_App.Models
         [DisplayName("Recommendations")]
         public string Recommendations { get; set; }                                      //text message from RA
 
-        [Required(ErrorMessage = "Details of residence advisor is required")]
-        [DisplayName("Details of Residence Advisor")]
-        public string ResidenceAdvisor { get; set; }
 
+        public string UserName { get; set; }
+
+
+        [DisplayName("Residence Advisor")]
+        public string Emp_Name { get; set; }
+
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
 
     }
