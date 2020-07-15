@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -163,8 +164,34 @@ namespace RA_App.Controllers
 
 
         }
+        ApplicationDbContext db = new ApplicationDbContext();
+        public ActionResult Delete(string Id)
+        {
+            
+            if (Id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+ 
+            ApplicationUser users = db.Users.Find(Id);
+            if (users == null)
+            {
+                return HttpNotFound();
+            }
+            return View(users);
+        }
 
 
+        // POST: Forms/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(string id)
+        {
+            ApplicationUser users = db.Users.Find(id);
+            db.Users.Remove(users);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
 
 

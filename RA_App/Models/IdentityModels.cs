@@ -26,6 +26,7 @@ namespace RA_App.Models
 
     }
 
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -38,7 +39,7 @@ namespace RA_App.Models
             return new ApplicationDbContext();
         }
 
-       
+        
     }
 
     public class ApplicationRole : IdentityRole
