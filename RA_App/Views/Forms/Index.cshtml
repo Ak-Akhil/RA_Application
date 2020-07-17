@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<RA_App.Models.Form>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "List of Forms";
 }
 
-<h2>Index</h2>
+<h2>All Submited Forms</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Form", "Create")
 </p>
 <table class="table">
     <tr>
@@ -32,7 +32,6 @@
         <th>
             @Html.DisplayNameFor(model => model.DateReported_II)
         </th>
-
         <th>
             @Html.DisplayNameFor(model => model.UserName)
         </th>
@@ -66,16 +65,14 @@
             @Html.DisplayFor(modelItem => item.DateReported_II)
         </td>
         <td>
-
-        <td>
             @Html.DisplayFor(modelItem => item.UserName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Emp_Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+           
+            @Html.ActionLink("Details", "Details", new { id=item.ID}) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
     </tr>

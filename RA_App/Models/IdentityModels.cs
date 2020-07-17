@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -17,9 +18,16 @@ namespace RA_App.Models
             // Add custom user claims here
             return userIdentity;
         }
+        [Display(Name = "Name")]
         public string Emp_Name { get; set; }
+
+        [Display(Name = "Surname")]
         public string Emp_Surname { get; set; }
+
+        [Display(Name = "ID")]
         public string Emp_IDNum { get; set; }
+
+        [Display(Name = "Contact Number")]
         public string Emp_ContactNo { get; set; }
 
 

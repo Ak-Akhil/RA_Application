@@ -101,12 +101,6 @@ C:\Users\Ak_PC\source\repos\RA_App\RA_App\bin\Microsoft.Owin.Security.Twitter.xm
 C:\Users\Ak_PC\source\repos\RA_App\RA_App\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Ak_PC\source\repos\RA_App\RA_App\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Ak_PC\source\repos\RA_App\RA_App\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.Migrations.InitialCreate.resources
-C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.Migrations.role.resources
-C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.Migrations.addmigraionRegisterViewModel.resources
-C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.Migrations.addmigration.resources
-C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.Migrations.addmigrate.resources
-C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.csproj.GenerateResource.cache
 C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.csproj.CoreCompileInputs.cache
 C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.csproj.CopyComplete
 C:\Users\Ak_PC\source\repos\RA_App\RA_App\obj\Debug\RA_App.dll

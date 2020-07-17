@@ -1,0 +1,119 @@
+﻿@model RA_App.Models.Form
+
+@{
+    ViewBag.Title = "My Details";
+}
+<style>
+
+    textarea {
+        overflow-y: scroll;
+        height: 100px;
+        resize: none;
+    }
+
+
+
+</style>
+<h2>Report</h2>
+
+<div>
+    <h4>Submitted By : @Model.Emp_Name (@Model.UserName)</h4>
+    <hr />
+
+    <div class="form-horizontal">
+   
+            <div class="form-group">
+                @Html.LabelFor(model => model.StudName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.StudName, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+                    @Html.ValidationMessageFor(model => model.StudName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.StudSurname, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.StudSurname, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+                    @Html.ValidationMessageFor(model => model.StudSurname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.StudNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.StudNo, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+                    @Html.ValidationMessageFor(model => model.StudNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.YOS, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.YOS, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+                    @Html.ValidationMessageFor(model => model.YOS, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ContactNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+                    @Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+           
+                <div class="form-group">
+                    @Html.LabelFor(model => model.NatureOf_II, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.NatureOf_II, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+                        @Html.ValidationMessageFor(model => model.NatureOf_II, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Dateof_II, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.Dateof_II, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+                        @Html.ValidationMessageFor(model => model.Dateof_II, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DateReported_II, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.DateReported_II, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+                        @Html.ValidationMessageFor(model => model.DateReported_II, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Details_II, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-lg-10">
+                        @Html.TextAreaFor(model => model.Details_II, 10, 120, htmlAttributes: new { style = "width: 60%; max-width: 60%;", @readonly = true })
+                        @*@Html.EditorFor(model => model.Details_II, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.ValidationMessageFor(model => model.Details_II, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            
+       
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ActionsTaken, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.ActionsTaken, 10, 120, htmlAttributes: new { style = "width: 60%; max-width: 60%;", @readonly = true })
+
+                        @Html.ValidationMessageFor(model => model.ActionsTaken, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Recommendations, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Recommendations, 10, 120, htmlAttributes: new { style = "width: 60%; max-width: 60%;", @readonly = true })
+                        @Html.ValidationMessageFor(model => model.Recommendations, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+</div>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "MyIndex")
+</p>

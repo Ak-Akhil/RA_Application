@@ -1,0 +1,172 @@
+﻿
+@{
+    ViewBag.Title = "Statistics";
+}
+
+<h2>Statistics</h2>
+
+@{var total = ViewBag.total;}
+
+
+@{var totRA = ViewBag.totRA;}
+
+
+@{var totFirstyear = ViewBag.totFirstyear;}
+
+
+
+@{var totSecondyear = ViewBag.totSecondyear;}
+
+
+
+@{var totThirdyear = ViewBag.totThirdyear;}
+
+
+@{var totFourthyear = ViewBag.totFourthyear;}
+
+
+@{var totFifthyear = ViewBag.totFifthyear;}
+
+
+@{var totTorInc = ViewBag.totTorInc;}
+
+
+@{var totTorIll = ViewBag.totTorIll;}
+
+
+@{int RAs = ViewBag.RAs;}
+
+
+
+@foreach (var RA in ViewBag.NumRepRA)
+{
+    <li>
+        @RA.UserName  @RA.NumberOfReports
+    </li>
+}
+
+
+@*<p>
+        <div class="desc">Total number of cases: @total</div>
+        <div class="desc">Total number of RA's: @totRA</div>
+        <div class="desc">Total number of Second years: @totSecondyear</div>
+        <div class="desc">Total number of third years: @totThirdyear</div>
+        <div class="desc">Total number of third years: @totFourthyear</div>
+        <div class="desc">Total number of third years: @totFifthyear</div>
+        <div class="desc">Total number of Incedents: @totTorInc</div>
+        <div class="desc">Total number of Illnesses @totTorIll</div>
+    <h2>List number of cases per RA</h2>
+        <div class="desc">Total number of RA @RAs</div>
+        <div class="desc">Total number of First years: @totFirstyear</div>
+    </p>*@
+
+
+
+
+<html>
+
+<head>
+    <style>
+        td {
+            padding: 0 15px;
+        }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        // Load Charts and the corechart package.
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        google.charts.load('current', { 'packages': ['bar'] });
+
+        // Draw the pie chart for Sarah's pizza when Charts is loaded.
+        google.charts.setOnLoadCallback(drawSarahChart);
+
+        // Draw the pie chart for the Anthony's pizza when Charts is loaded.
+        google.charts.setOnLoadCallback(drawStuff);
+
+        // Callback that draws the pie chart for Sarah's pizza.
+          // Callback that draws the pie chart for Sarah's pizza.
+        function drawSarahChart() {
+
+            // Create the data table for Sarah's pizza.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+                ['Incident', @totTorInc],
+                ['Illness', @totTorIll]
+
+            ]);
+
+            // Set options for Sarah's pie chart.
+            var options = {
+                title: 'Type Of Report',
+                width: 500,
+                height: 400
+            };
+
+            // Instantiate and draw the chart for Sarah's pizza.
+            var chart = new google.visualization.PieChart(document.getElementById('Sarah_chart_div'));
+            chart.draw(data, options);
+        }
+
+
+        // Callback that draws the pie chart for Anthony's pizza.
+        function drawStuff() {
+            var data = new google.visualization.arrayToDataTable([
+            ['Year Of Study', 'Number Of Reports Year Study'],
+                    ["First year", @totFirstyear],
+                    ["Second year", @totSecondyear],
+                    ["Third year", @totThirdyear],
+                    ["Fourth year",  @totFourthyear],
+                    ["Fifth year",  @totFifthyear]
+
+            ]);
+
+            // Set options for Anthony's pie chart.
+            var options = {
+                title: 'Total Number of Reports',
+                width: 500,
+                height: 400,
+                legend: { position: 'none' },
+                chart: {
+
+
+                },
+                axes: {
+                    x: {
+                        0: { side: 'top', label: 'Reports For Each Year Of Study' } // Top x-axis.
+                    }
+                },
+                bar: { groupWidth: "90%" }
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('Anthony_chart_div'));
+            // Convert the Classic options to Material options.
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        };
+    </script>
+</head>
+<body>
+
+    <!--Table and divs that hold the pie charts-->
+    <table class="columns">
+        <tr>
+            <td><div id="Sarah_chart_div" style="border: 1px solid #ccc"></div></td>
+
+            <td><div id="Anthony_chart_div" style="border: 1px solid #ccc"></div></td>
+        </tr>
+    </table>
+    <hr />
+    <h2>Other Statistics</h2>
+    <dl>
+        <dt>Total number of cases:</dt>
+        <dd>= @total</dd>
+        <dt>Total number of RA's</dt>
+        <dd>= @totRA</dd>
+
+
+    </dl>
+</body>
+</html>

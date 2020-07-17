@@ -1,0 +1,85 @@
+﻿@model IEnumerable<RA_App.Models.Form>
+
+@{
+    ViewBag.Title = "My Forms";
+}
+
+    <h3> Welcome @ViewBag.MyName</h3>
+
+
+
+    <h2>My Submitted Forms</h2>
+
+<p>
+    @Html.ActionLink("Add New Form", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudSurname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NatureOf_II)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dateof_II)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateReported_II)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Emp_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudSurname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NatureOf_II)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dateof_II)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateReported_II)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Emp_Name)
+        </td>
+        <td>
+           
+            @Html.ActionLink("Details", "MyDetails", new { id=item.ID})
+          
+        </td>
+    </tr>
+}
+
+</table>

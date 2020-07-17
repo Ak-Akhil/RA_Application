@@ -153,7 +153,7 @@ namespace RA_App.Controllers
         //
 
 
-
+        [Authorize(Roles = "Admin")]
         [AllowAnonymous]
         public ActionResult Index()
         {
@@ -178,18 +178,31 @@ namespace RA_App.Controllers
             {
                 return HttpNotFound();
             }
-            return View(users);
+
+                return View(users);
         }
 
-
+        [Authorize(Roles = "Admin")]
         // POST: Forms/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
+
             ApplicationUser users = db.Users.Find(id);
-            db.Users.Remove(users);
-            db.SaveChanges();
+
+            if (users.UserName == "Admin@dut.ac.za")
+            {
+                ViewBag.Error = "You Cannot Delete The Master Login";
+
+
+                return View(users);
+            }
+            else
+            {
+                db.Users.Remove(users);
+                db.SaveChanges();
+            }
             return RedirectToAction("Index");
         }
 
@@ -204,6 +217,7 @@ namespace RA_App.Controllers
 
 
         // GET: /Account/Register
+        [Authorize(Roles = "Admin")]
         [AllowAnonymous]
         public ActionResult Register()
         {
@@ -219,6 +233,7 @@ namespace RA_App.Controllers
 
         //
         // POST: /Account/Register
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -232,7 +247,7 @@ namespace RA_App.Controllers
                 {
                     
         result = await UserManager.AddToRoleAsync(user.Id, model.Role_Name);
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                  //  await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
@@ -240,7 +255,7 @@ namespace RA_App.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Account");
                 }
                 AddErrors(result);
             }
@@ -474,7 +489,7 @@ namespace RA_App.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         //
@@ -531,7 +546,7 @@ namespace RA_App.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("MyIndex", "Forms");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

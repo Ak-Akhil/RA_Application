@@ -76,7 +76,7 @@ namespace RA_App.Models
         public string Emp_Surname { get; set; }
 
 
-        [StringLength(13, MinimumLength = 13, ErrorMessage = "Please enter a valid ID number (8 Digits)")]
+        [StringLength(13, MinimumLength = 13, ErrorMessage = "Please enter a valid ID number (13 Digits)")]
         [Required(ErrorMessage = "ID number is required")]
         [Display(Name = "ID Number")]
         public string Emp_IDNum { get; set; }
@@ -100,7 +100,7 @@ namespace RA_App.Models
 
 
 
-
+        [Display(Name = "Role")]
         public string Role_Name { get; set; }
         public virtual RoleViewModel RoleViewModel { get; set; }
 
